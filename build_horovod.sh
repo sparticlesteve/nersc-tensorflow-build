@@ -11,4 +11,4 @@ export CFLAGS="-g"
 export CXXFLAGS="-g"
 export HOROVOD_MPICXX_SHOW="$PWD/showMPI.sh"
 
-pip install --no-cache-dir horovod
+pip install -v --no-cache-dir horovod==$HOROVOD_VERSION
