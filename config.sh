@@ -8,16 +8,16 @@ else
 fi
 
 # Configure the installation
-export INSTALL_NAME="tensorflow"
+export INSTALL_NAME="tensorflow-gpu"
 export TF_VERSION="v1.14.0"
+export HOROVOD_VERSION="0.16.2"
 export BUILD_DIR=$SCRATCH/tensorflow-build/$INSTALL_NAME/$TF_VERSION
 export INSTALL_DIR=$INSTALL_BASE/$INSTALL_NAME/$TF_VERSION
 
 # Setup programming environment
-module unload PrgEnv-intel
-module load PrgEnv-gnu
-module unload craype-hugepages2M
-module unload atp
+module load gcc/7.3.0
+module load cuda/10.1.168 #cuda/10.0.130
+module load mvapich2/2.3.2 #openmpi/4.0.1-ucx-1.6
 
 # Setup conda
 source /usr/common/software/python/3.7-anaconda-2019.07/etc/profile.d/conda.sh

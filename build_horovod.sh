@@ -4,11 +4,11 @@
 conda activate $INSTALL_DIR
 
 # Set compile flags
-export CRAYPE_LINK_TYPE=dynamic
-export CC=cc
-export CXX=CC
-export CFLAGS="-g"
-export CXXFLAGS="-g"
-export HOROVOD_MPICXX_SHOW="$PWD/showMPI.sh"
+export CC=mpicc
+export CXX=mpic++
+#export CFLAGS="-g"
+#export CXXFLAGS="-g"
+#export HOROVOD_MPICXX_SHOW="$PWD/showMPI.sh"
+#export HOROVOD_MPI_THREADS_DISABLE=1
 
-pip install --no-cache-dir horovod
+pip install -v --no-cache-dir horovod==$HOROVOD_VERSION
