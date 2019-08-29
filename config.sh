@@ -9,8 +9,9 @@ fi
 
 # Configure the installation
 export INSTALL_NAME="tensorflow-gpu"
+export PYTHON_VERSION=3.6
 export TF_VERSION="v1.14.0"
-export HOROVOD_VERSION="0.16.2"
+export HOROVOD_VERSION="0.17.1"
 export BUILD_DIR=$SCRATCH/tensorflow-build/$INSTALL_NAME/$TF_VERSION
 export INSTALL_DIR=$INSTALL_BASE/$INSTALL_NAME/$TF_VERSION
 

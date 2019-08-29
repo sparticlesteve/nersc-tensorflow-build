@@ -9,7 +9,6 @@
 set -e
 . config.sh
 conda activate $INSTALL_DIR
-
 module list
 
 # Single GPU test
