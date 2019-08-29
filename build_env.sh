@@ -10,3 +10,6 @@ conda create -y --prefix $INSTALL_DIR python=3.6 \
 
 conda activate $INSTALL_DIR
 conda install -y -c conda-forge ipympl
+
+# If building TF from source
+conda install -y bazel
