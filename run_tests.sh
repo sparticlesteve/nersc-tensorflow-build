@@ -15,5 +15,8 @@ module list
 # Single GPU test
 srun -n 1 -u python test_install.py --cuda
 
-# Multi-GPU tests
+# Multi-GPU test
 srun --ntasks-per-node 8 -l -u python test_install.py --hvd #--cuda
+
+# Full horovod mnist training test
+srun --ntasks-per-node 8 -l -u python test_hvdmnist.py
