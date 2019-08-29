@@ -33,7 +33,6 @@ def main():
     if args.cuda or args.all:
         test_cuda()
 
-def main():
     print('Finished')
 
 if __name__ == '__main__':

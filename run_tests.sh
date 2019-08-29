@@ -9,4 +9,4 @@
 conda activate $INSTALL_DIR
 module list
 
-srun -l -u python test_install.py #--mpi --vision --geometric
+srun -l -u python test_install.py --hvd
