@@ -9,7 +9,7 @@ conda create -y --prefix $INSTALL_DIR python=$PYTHON_VERSION \
     h5py ipython ipykernel matplotlib scikit-learn pandas pillow
 
 conda activate $INSTALL_DIR
-conda install -y -c conda-forge ipympl
+conda install -y -c conda-forge ipympl keras-preprocessing keras-applications
 
 # If building TF from source
 conda install -y bazel
