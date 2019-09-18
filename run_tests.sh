@@ -9,13 +9,17 @@
 set -e
 . config.sh
 conda activate $INSTALL_DIR
+#export LD_PRELOAD=$MVAPICH2_DIR/lib/libmpi.so
 module list
 
-# Single GPU test
+echo
+echo "-----------SINGLE GPU TEST------------"
 srun -n 1 -u python test_install.py --cuda
 
-# Multi-GPU test
+echo
+echo "-----------MULTI GPU TEST-------------"
 srun --ntasks-per-node 8 -l -u python test_install.py --hvd #--cuda
 
-# Full horovod mnist training test
+echo
+echo "-----------TRAINING TEST--------------"
 srun --ntasks-per-node 8 -l -u python test_hvdmnist.py
