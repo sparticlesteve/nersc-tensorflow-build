@@ -27,7 +27,7 @@ cd tensorflow
 
 # Run the build
 ./configure
-bazel build --config=opt --config=cuda --config=mkl //tensorflow/tools/pip_package:build_pip_package
+bazel build --config=mkl -c opt --copt=-mavx --copt=-mavx2 --copt=-mfma --copt=-mavx512f --copt=-mavx512pf --copt=-mavx512cd --copt=-mavx512er //tensorflow/tools/pip_package:build_pip_package
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package $BUILD_DIR/tensorflow_pkg
 
 # Install the package
