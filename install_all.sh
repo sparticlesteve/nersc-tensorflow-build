@@ -15,7 +15,7 @@ srun -n 1 ./build_env.sh
 echo
 echo "-----------BUILD tensorflow-----------"
 srun -n 1 ./build_tensorflow_conda.sh
-srun -n 1 #./build_tensorflow_source.sh
+#srun -n 1 ./build_tensorflow_source.sh
 
 echo
 echo "-----------BUILD horovod-----------"

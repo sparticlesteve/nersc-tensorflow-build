@@ -9,7 +9,7 @@
 set -e
 . config.sh
 conda activate $INSTALL_DIR
-#export LD_PRELOAD=$MVAPICH2_DIR/lib/libmpi.so
+#$export LD_PRELOAD=$MVAPICH2_DIR/lib/libmpi.so
 module list
 
 echo

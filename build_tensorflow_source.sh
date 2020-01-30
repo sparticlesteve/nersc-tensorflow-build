@@ -25,7 +25,7 @@ export CC_OPT_FLAGS="-march=native"
 # Checkout the code
 mkdir -p $BUILD_DIR && cd $BUILD_DIR
 [ -d tensorflow ] && rm -rf tensorflow
-git clone -b $TF_VERSION https://github.com/tensorflow/tensorflow.git
+git clone -b v${TF_VERSION} https://github.com/tensorflow/tensorflow.git
 cd tensorflow
 
 # Run the build
