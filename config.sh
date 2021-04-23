@@ -19,6 +19,7 @@ while (( "$#" )); do
             # Production install, as swowner
             umask 002 # all-readable
             INSTALL_BASE=/usr/common/software
+            shift
             ;;
         *)
             echo "Error: unsupport arg $1" >&2
