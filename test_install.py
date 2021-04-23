@@ -8,7 +8,6 @@ import tensorflow as tf
 
 # Suppress TF warnings
 #os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-#tf.compat.v1.logging.set_verbosity(logging.ERROR)
 
 def test_hvd():
     import horovod.tensorflow as hvd
@@ -17,8 +16,7 @@ def test_hvd():
 
 def test_cuda():
     print('Built with CUDA:', tf.test.is_built_with_cuda())
-    print('GPU available:', tf.test.is_gpu_available())
-    print('GPU device name:', tf.test.gpu_device_name())
+    print('GPUs available:', tf.config.list_physical_devices('GPU'))
 
 def main():
     parser = argparse.ArgumentParser()

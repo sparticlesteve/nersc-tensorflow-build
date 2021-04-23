@@ -1,2 +1,2 @@
-. config.sh
+. config.sh $@
 conda activate $INSTALL_DIR
