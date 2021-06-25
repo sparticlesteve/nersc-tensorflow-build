@@ -3,8 +3,8 @@
 # Configure the installation
 export INSTALL_NAME="tensorflow"
 export PYTHON_VERSION=3.8
-export TF_VERSION="2.4.1"
-export HOROVOD_VERSION="0.21.0"
+export TF_VERSION="2.5.0"
+export HOROVOD_VERSION="0.22.1"
 export SYSTEM_ARCH=cpu
 INSTALL_BASE=$SCRATCH/conda
 
@@ -36,11 +36,11 @@ if [[ $SYSTEM_ARCH == "gpu" ]]; then
     module purge
     module load cgpu
     module load gcc/7.3.0 #8.3.0
-    module load cuda/11.0.3
-    module load cudnn/8.0.5
+    module load cuda/11.2.2
+    module load cudnn/8.1.0
+    module load nccl/2.8.4
     module load mpich/3.3.1-debug
     #module load openmpi/4.0.3
-    module load nccl/2.8.4
     export BUILD_DIR=${BUILD_DIR}-gpu
     export INSTALL_DIR=${INSTALL_DIR}-gpu
 
