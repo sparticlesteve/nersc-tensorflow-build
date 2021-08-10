@@ -7,5 +7,5 @@ conda create -y --prefix $INSTALL_DIR python=$PYTHON_VERSION \
 # Install additional dependencies via pip
 source $CONDA_INIT_SCRIPT
 conda activate $INSTALL_DIR
-pip install numpy pyyaml setuptools h5py ipython ipykernel matplotlib \
+pip install --no-cache-dir numpy pyyaml setuptools h5py ipython ipykernel matplotlib \
     scikit-learn pandas pillow ipympl
