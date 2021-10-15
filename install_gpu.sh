@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH -C gpu
-#SBATCH -N 1 -n 1 -G 1 -c 20 -t 30
+#SBATCH -N 1 -n 1 -G 1 -c 32 -t 60
 #SBATCH -o slurm-build-%j.out
+#SBATCH -A nstaff_g
 
 # Abort on failure
 set -e -o pipefail

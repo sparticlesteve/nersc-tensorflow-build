@@ -3,7 +3,7 @@
 # Configure the installation
 export INSTALL_NAME="tensorflow"
 export PYTHON_VERSION=3.8
-export TF_VERSION="2.5.0"
+export TF_VERSION="2.6.0"
 export HOROVOD_VERSION="0.22.1"
 export SYSTEM_ARCH=cpu
 INSTALL_BASE=$SCRATCH/conda
@@ -18,7 +18,7 @@ while (( "$#" )); do
         --prod)
             # Production install, as swowner
             umask 002 # all-readable
-            INSTALL_BASE=/usr/common/software
+            INSTALL_BASE=/global/common/software/nersc/shasta2105
             shift
             ;;
         *)
@@ -31,15 +31,13 @@ done
 export BUILD_DIR=$SCRATCH/tensorflow-build/$INSTALL_NAME/$TF_VERSION
 export INSTALL_DIR=$INSTALL_BASE/$INSTALL_NAME/$TF_VERSION
 
-# Cori-GPU configuration
+# PM configuration
 if [[ $SYSTEM_ARCH == "gpu" ]]; then
-    module purge
-    module load cgpu
-    module load gcc/7.3.0 #8.3.0
-    module load cuda/11.2.2
-    module load cudnn/8.1.0
-    module load nccl/2.8.4
-    module load mpich/3.3.1-debug
+    module load PrgEnv-gnu gcc/9.3.0
+    module load cuda/11.3.0
+    module load cudnn/8.2.0
+    module load nccl/2.9.8
+    module load cray-mpich/8.1.9
     #module load openmpi/4.0.3
     export BUILD_DIR=${BUILD_DIR}-gpu
     export INSTALL_DIR=${INSTALL_DIR}-gpu
@@ -51,9 +49,11 @@ else
     module unload craype-hugepages2M
     module unload atp
 fi
+export CXX=CC #g++
+export CC=cc #gcc
 
 # Setup conda
-export CONDA_INIT_SCRIPT=/usr/common/software/python/3.8-anaconda-2020.11/etc/profile.d/conda.sh
+export CONDA_INIT_SCRIPT=/global/common/software/nersc/shasta2105/python/3.9-anaconda-2021.05/etc/profile.d/conda.sh
 source $CONDA_INIT_SCRIPT
 
 # Print some stuff

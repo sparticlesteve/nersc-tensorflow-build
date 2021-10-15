@@ -8,7 +8,8 @@ cd mpi4py-3.0.3
 
 # Build it using the correct MPI wrappers
 if [[ $SYSTEM_ARCH == "gpu" ]]; then
-    export MPICC=mpicc
+    # should be mpicc for cgpu, cc for PM
+    export MPICC=cc
 else
     export MPICC=cc
     export CRAYPE_LINK_TYPE=dynamic
