@@ -21,7 +21,4 @@ else
     export HOROVOD_MPICXX_SHOW="$PWD/showMPI.sh"
 fi
 
-echo " ---- Env for hvd install: ----"
-module list
-
 pip install -v --no-cache-dir horovod==$HOROVOD_VERSION
