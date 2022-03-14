@@ -39,8 +39,8 @@ if [[ $SYSTEM_ARCH == "gpu" ]]; then
     module load nccl/2.9.8
     module load cray-mpich/8.1.9
     #module load openmpi/4.0.3
-    export BUILD_DIR=${BUILD_DIR}-gpu
-    export INSTALL_DIR=${INSTALL_DIR}-gpu
+    export BUILD_DIR=${BUILD_DIR}
+    export INSTALL_DIR=${INSTALL_DIR}
 
 # Cori-CPU configuration
 else

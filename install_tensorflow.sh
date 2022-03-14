@@ -3,7 +3,7 @@
 # Install TF binaries
 
 # Install tensorflow with pip
-pip install --no-cache-dir "tensorflow==$TF_VERSION"
+pip install --no-cache-dir tensorflow==$TF_VERSION tensorflow-datasets
 
 # Install via conda
 #conda install -y -c anaconda tensorflow=$TF_VERSION
