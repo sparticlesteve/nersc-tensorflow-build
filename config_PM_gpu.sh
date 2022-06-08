@@ -3,12 +3,12 @@
 # Configure the installation
 export INSTALL_NAME="tensorflow"
 export PYTHON_VERSION=3.9
-export TF_VERSION="2.8.0"
-export HOROVOD_VERSION="0.24.1"
+export TF_VERSION="2.9.0"
+export HOROVOD_VERSION="0.24.3"
 
 if [ $USER == "swowner" ]; then
     umask 002 # all-readable
-    INSTALL_BASE=/global/common/software/nersc/pm-2021q4/sw
+    INSTALL_BASE=/global/common/software/nersc/pm-2022q2/sw
 else
     INSTALL_BASE=$SCRATCH/conda
 fi
@@ -22,7 +22,7 @@ module load PrgEnv-gnu gcc/11.2.0
 module load cudatoolkit/11.5
 module load cudnn/8.3.2
 module load nccl/2.11.4
-module load cray-mpich/8.1.13
+module load cray-mpich/8.1.15
 export BUILD_DIR=${BUILD_DIR}
 export INSTALL_DIR=${INSTALL_DIR}
 
