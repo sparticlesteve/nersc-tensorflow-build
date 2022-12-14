@@ -10,6 +10,7 @@ export HOROVOD_WITHOUT_MXNET=1
 if [[ ${SYSTEM_ARCH##*_} == "gpu" ]]; then
     echo "Using NCCL for hvd GPU operations"
     export HOROVOD_GPU_OPERATIONS=NCCL
+    export HOROVOD_NCCL_LINK=SHARED
 
 # CPU build
 else

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH -C gpu
-#SBATCH -N 1 -n 1 -G 1 -c 32 -t 60
+#SBATCH -N 1 -n 1 -G 1 -c 32 -t 30
 #SBATCH -o slurm-build-%j.out
 #SBATCH -A nstaff_g
 

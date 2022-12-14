@@ -8,7 +8,7 @@ export HOROVOD_VERSION="0.24.3"
 
 if [ $USER == "swowner" ]; then
     umask 002 # all-readable
-    INSTALL_BASE=/global/common/software/nersc/pm-2022q2/sw
+    INSTALL_BASE=/global/common/software/nersc/pm-2022q4/sw
 else
     INSTALL_BASE=$SCRATCH/conda
 fi
@@ -19,10 +19,11 @@ export INSTALL_DIR=$INSTALL_BASE/$INSTALL_NAME/$TF_VERSION
 
 # PM configuration
 module load PrgEnv-gnu gcc/11.2.0
-module load cudatoolkit/11.5
+module load cudatoolkit/11.7
 module load cudnn/8.3.2
-module load nccl/2.11.4
-module load cray-mpich/8.1.15
+module load nccl/2.15.5-ofi
+module load evp-patch
+module load cray-mpich/8.1.22
 export BUILD_DIR=${BUILD_DIR}
 export INSTALL_DIR=${INSTALL_DIR}
 
