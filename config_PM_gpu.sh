@@ -23,7 +23,6 @@ module load cudatoolkit/11.7
 module load cudnn/8.3.2
 module load nccl/2.15.5-ofi
 module load evp-patch
-module load cray-mpich/8.1.22
 export BUILD_DIR=${BUILD_DIR}
 export INSTALL_DIR=${INSTALL_DIR}
 
