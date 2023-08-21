@@ -26,9 +26,8 @@ module load evp-patch
 export BUILD_DIR=${BUILD_DIR}
 export INSTALL_DIR=${INSTALL_DIR}
 
-export CXX=CC #g++
-export CC=cc #gcc
-# should be mpicc for Cori gpu, otherwise cc
+export CXX=CC
+export CC=cc
 export MPICC=cc
 
 # Setup conda
